@@ -7,6 +7,12 @@ Created on Mon Jul  2 21:18:57 2018
 
 #from numpy import *
 #from Digit_recog import *
+from Digit_recog import img2vec
+from KNN_algr import *
+from Parse_data import file_parse_matrix
+from TestData import createDataSet, Test_accuray, Norm_feature
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 if __name__ == '__main__':
