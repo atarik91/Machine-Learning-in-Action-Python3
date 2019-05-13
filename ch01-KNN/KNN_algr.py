@@ -10,14 +10,15 @@ import operator
 
 
 def classify_KNN(test_X, train_set, labels, K):
-    rows = train_set.shape[0]
+    rows = train_set.shape[0]  #shape是np中的函数,y.shape[0]代表行数，y.shape[1]代表列数
+
     diff = tile(test_X, (rows, 1)) - train_set
     # 这一行利用tile函数将输入样本实例转化为与训练集同尺寸的矩阵
     # 便之后的矩阵减法运算
     
     sqDistance = (diff ** 2).sum(axis=1)  
     Distance = sqDistance ** 0.5
-    sorted_Distance = Distance.argsort()
+    sorted_Distance = argsort()
     # 对每个训练样本与输入的测试样本求欧几里得距离，即点之间的范数
     # 随后按距离由小到大进行排序
     
@@ -29,6 +30,7 @@ def classify_KNN(test_X, train_set, labels, K):
     
     sortedClassCount = sorted(classCount.items(), 
                               key = operator.itemgetter(1), reverse=True)
+    #按照classCount中的value排序倒排序, 排序函数参见https://www.cnblogs.com/sysu-blackbear/p/3283993.html
     return sortedClassCount[0][0]
 
 
