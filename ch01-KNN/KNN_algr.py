@@ -18,7 +18,7 @@ def classify_KNN(test_X, train_set, labels, K):
     
     sqDistance = (diff ** 2).sum(axis=1)  
     Distance = sqDistance ** 0.5
-    sorted_Distance = argsort()
+    sorted_Distance = Distance.argsort()
     # 对每个训练样本与输入的测试样本求欧几里得距离，即点之间的范数
     # 随后按距离由小到大进行排序
     
@@ -28,8 +28,7 @@ def classify_KNN(test_X, train_set, labels, K):
         classCount[vote_label] = classCount.get(vote_label, 0) + 1
     #记录距离最小的前K个类，并存放入列表。KEY对应标签，VALUE对应计数
     
-    sortedClassCount = sorted(classCount.items(), 
-                              key = operator.itemgetter(1), reverse=True)
+    sortedClassCount = sorted(classCount.items(), key = operator.itemgetter(1), reverse=True)
     #按照classCount中的value排序倒排序, 排序函数参见https://www.cnblogs.com/sysu-blackbear/p/3283993.html
     return sortedClassCount[0][0]
 
