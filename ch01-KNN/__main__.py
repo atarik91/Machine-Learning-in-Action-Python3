@@ -16,21 +16,21 @@ import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
     # 教材2.1节代码
-    #group, labels = createDataSet()
-    #output = classify_KNN([0, 0], group, labels, 3)
-    #print("测试数据为:", [0, 0], "分类结果为：", output)
+    # group, labels = createDataSet()
+    # output = classify_KNN([0, 0], group, labels, 3)
+    # print("测试数据为:", [0, 0], "分类结果为：", output)
 
-    # 教材2.2节代码
-    DataMat, LabelMat = file_parse_matrix('datingTestSet2.txt')
-    print(DataMat, shape(DataMat), LabelMat)
+    # 教材2.2节代码--汇坐标点
+    # DataMat, LabelMat = file_parse_matrix('datingTestSet2.txt')
+    # print(DataMat, shape(DataMat), LabelMat)
+    #使用矩阵的第二列和第三列作为横纵坐标绘图
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111)
+    # ax.scatter(DataMat[:,1],DataMat[:,2])
+    # plt.show()
 
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    ax.scatter(DataMat[:,1],DataMat[:,2])
-    plt.show()
-
+    #教材2.2节代码--归一化并且预测数据
     dating_mat, label_mat = file_parse_matrix('datingTestSet2.txt')
-    data_normed, ranges, minV = Norm_feature(dating_mat)
     Test_accuray(0.1, dating_mat, label_mat)
 
 
