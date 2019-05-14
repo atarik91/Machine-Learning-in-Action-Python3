@@ -6,6 +6,7 @@ Created on Sun Jul  8 13:06:53 2018
 """
 
 from numpy import *
+from os import  *
 
 def loadData(filename):
     '''
@@ -24,8 +25,9 @@ def sigmoid(inp):
 
 def Grad_descent(datamat, labels):
     '''
-    
+
     '''
+
     data = mat(datamat)
     label = mat(labels).transpose()
     
@@ -41,5 +43,12 @@ def Grad_descent(datamat, labels):
         weights = weights + alpha * data.transpose() * error
     return weights
     
-    
+
+def test():
+
+    num = [(1,2.5), (1.5, 3.2), (1.3, 4.0), (2.2, 1.8)]
+    y,z = builtins.max(num, key=lambda x:x[0])
+    max
+    print(y, z)
+
     
