@@ -14,7 +14,7 @@ def cal_entropy(data):
     label_count = {} #字典存储每个类别出现的次数
  
     for vec in data:
-        cur_label = vec[-1] 
+        cur_label = vec[-1] #提取数组的最后一个元素
     # 将样本标签提取出来，并计数
         label_count[cur_label] = label_count.get(cur_label,0) + 1
     Entropy = 0.0

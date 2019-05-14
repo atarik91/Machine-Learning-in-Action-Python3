@@ -22,25 +22,32 @@ def create_data():
     return dataSet, labels
 
 if __name__ == '__main__':
+
+    #3.1.1--计算信息熵
     myData, labels = create_data()
     print(myData)
     print(cal_entropy(myData))
-    
+
+    #3.1.2--划分数据集
     print(Split_Data(myData,0,1))
+    #3.1.2--使用信息熵划分数据集
     print(Split_by_entropy(myData))
-    
-    mytree = Create_Tree(myData, labels)
-    print(mytree)
-    
+
+    #3.1.3--创建决策树
+    # mytree = Create_Tree(myData, labels)
+    # print(mytree)
+
+    #3.3.1--测试算法
     myTree = retrieveTree(0)
     print(Num_of_leaf(myTree), Depth_of_tree(myTree))
     myTree['no surfacing'][3] = 'maybe'
     createPlot(myTree)
 
+    #3.4--隐性眼镜示例
     with open('lenses.txt') as fp:
         lenses = [line.strip().split('\t') for line in fp.readlines()]
         lensesLabels=['age','prescript','astigmatic','tearRate']
-    
+
     lense_Tree = Create_Tree(lenses, lensesLabels)
     #createPlot(lense_Tree)
     print(classify(lense_Tree, lensesLabels, ['young','hyper','yes','reducedno']))

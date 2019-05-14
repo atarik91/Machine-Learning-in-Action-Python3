@@ -23,12 +23,12 @@ def Majority_vote(classList):
 
 def Create_Tree(dataset,labels):
 
-    classList = [x[-1] for x in dataset]
-    if classList.count(classList[0]) == len(classList):
+    classList = [x[-1] for x in dataset]  #将dataset中的最后一个元素拼接成一个list
+    if classList.count(classList[0]) == len(classList): #类别完全相同则停止继续划分
         return classList[0]
-    #
-    if len(dataset[0]) == 1:
-        return Majority_vote(classList)
+
+    if len(dataset[0]) == 1: #遍历完所有特征时返回出现次数最多的
+        return Majority_vote(classList)  #现有数据集下没有走该方法
     
     best_feature = Split_by_entropy(dataset)
     best_labels = labels[best_feature]

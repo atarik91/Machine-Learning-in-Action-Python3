@@ -7,6 +7,7 @@ Created on Wed Jul  4 13:35:15 2018
 
 from Cal_Entropy import *
 
+#三个输入参数:待划分的数据集、划分数据集的特征、需要返回的特征的值
 def Split_Data(dataset, axis, value):
     '''
     使用传入的axis以及value划分数据集
