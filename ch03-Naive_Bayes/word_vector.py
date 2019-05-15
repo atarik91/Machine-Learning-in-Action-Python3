@@ -33,6 +33,7 @@ def Words2Vec(wordList, input_set):
     @wordList：为前一个函数的输出值（包含单词）
     @input_set：输入需要分类的集合
     函数输出：包含0，1的布尔型向量（对应Wordlist中的单词出现与否）
+    实际就是依次遍历wordList,如果当前词在input_set中出现就将该索引位置置1,否则置0
     '''
     return_vec = [0] * len(wordList) 
     # 创建与词汇表等长的列表向量

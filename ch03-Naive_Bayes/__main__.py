@@ -29,8 +29,11 @@ if __name__ == "__main__":
     print(p1,p2,p_pos)
     
     Test_classify()
+
+    #4.6--示例:使用朴素贝叶斯过滤垃圾邮件
     Spam_filter('email')
-    
+
+    '''4.7--基于概率论的分类方法:朴素贝叶斯示例'''
     ny = feedparser.parse('http://newyork.craigslist.org/stp/index.rss')
     sf = feedparser.parse('http://sfbay.craigslist.org/stp/index.rss')
     a, b, c = localWords(ny,sf)
