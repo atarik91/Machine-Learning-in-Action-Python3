@@ -26,7 +26,7 @@ def Spam_filter(filename):
     #i 由1到26
     for i in range(1,26):
         #打开并读取指定目录下的本文中的长字符串，并进行处理返回
-        wordList = text_parser(open(filename + '/spam/%d.txt' % i).read())
+        wordList = text_parser(open(filename + '/spam/%d.txt' % i,encoding='ISO-8859-1').read())
         #将得到的字符串列表添加到docList
         docList.append(wordList)
         #将字符串列表中的元素添加到fullTest
@@ -34,7 +34,7 @@ def Spam_filter(filename):
         #类列表添加标签1
         classList.append(1)
         #打开并取得另外一个类别为0的文件，然后进行处理
-        wordList = text_parser(open(filename + '/ham/%d.txt' % i).read())
+        wordList = text_parser(open(filename + '/ham/%d.txt' % i,encoding='ISO-8859-1').read())
         docList.append(wordList)
         fullTest.extend(wordList)
         classList.append(0)
