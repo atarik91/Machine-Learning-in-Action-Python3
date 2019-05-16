@@ -45,7 +45,6 @@ def Grad_descent(datamat, labels):
         # grad(x) = (y - f(x)) * x'  更新回归系数
         weights = weights + alpha * data.transpose() * error
     return weights
-    
 
 def test():
 
