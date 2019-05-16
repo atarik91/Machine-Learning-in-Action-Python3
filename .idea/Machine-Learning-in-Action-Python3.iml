@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/ch01-KNN" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ch02-Decision-Tree" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ch03-Naive_Bayes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ch04-Logistic_regression" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

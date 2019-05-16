@@ -7,12 +7,13 @@ Created on Sun Jul  8 13:06:53 2018
 
 from numpy import *
 from os import  *
+import builtins
 
 def loadData(filename):
     '''
     '''
     datamat = []; labelmat = []
-    with open(filename) as fr:
+    with builtins.open(filename) as fr:
         for line in fr.readlines():
             line_arr = line.strip().split()
             datamat.append([1.0, float(line_arr[0]), float(line_arr[1])])

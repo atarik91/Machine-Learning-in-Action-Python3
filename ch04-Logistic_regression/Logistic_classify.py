@@ -8,6 +8,7 @@ Created on Sun Jul  8 15:11:21 2018
 from numpy import *
 from Grad_descent import *
 from Random_GDS import Stoch_gdescent
+import builtins
 
 def classifyVec(inp, weights):
     prob = sigmoid(sum(list(array(inp) * array(weights))))
@@ -17,9 +18,9 @@ def classifyVec(inp, weights):
 #logistic回归预测算法
 def colicTest():
     # 打开训练数据集
-    frTrain=open('horseColicTraining.txt')
+    frTrain=builtins.open('horseColicTraining.txt')
     # 打开测试数据集
-    frTest=open('horseColicTest.txt')
+    frTest=builtins.open('horseColicTest.txt')
 
     trainingSet=[];trainingLabels=[]
     # 读取训练集文档的每一行
