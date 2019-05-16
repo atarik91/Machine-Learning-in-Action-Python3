@@ -24,10 +24,11 @@ def loadData(filename):
 def sigmoid(inp):
     return 1.0 / (1 + exp(-inp))
 
-def Grad_descent(datamat, labels):
-    '''
 
     '''
+        批量梯度下降
+    '''
+def Grad_descent(datamat, labels):
 
     data = mat(datamat)
     label = mat(labels).transpose()

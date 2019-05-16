@@ -8,6 +8,9 @@ Created on Sun Jul  8 14:30:25 2018
 from numpy import *
 from Grad_descent import sigmoid
 
+'''
+随机梯度下降
+'''
 def Stoch_gdescent(datamat, labels, num_iter = 150):
     '''
     基于样本集中的每个样本（随机抽取）进行迭代
