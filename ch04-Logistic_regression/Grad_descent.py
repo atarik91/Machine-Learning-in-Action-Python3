@@ -36,11 +36,12 @@ def Grad_descent(datamat, labels):
     alpha = 0.001; max_iter = 500
     weights = ones((n, 1))   # 
     for k in range(max_iter):
-        # 
+        #将每个特征值都乘以一个特征系数,然后将所有的特征值相加
         z = dot(datamat, weights)
+        #带入sigmoid函数,得到0~1之间的数(算是归一化?)
         y_pred = sigmoid(z)
         error = (label - y_pred)
-        # grad(x) = (y - f(x)) * x'
+        # grad(x) = (y - f(x)) * x'  更新回归系数
         weights = weights + alpha * data.transpose() * error
     return weights
     

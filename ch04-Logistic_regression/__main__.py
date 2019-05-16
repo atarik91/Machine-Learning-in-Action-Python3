@@ -14,7 +14,7 @@ from Logistic_classify import *
 
 if __name__ == '__main__':
     data, label = loadData('testSet.txt')
-    print(Stoch_gdescent(data, label))
+    print(Grad_descent(data, label))
     
     weights = Stoch_gdescent(data, label)
     plot_fit(data, label, weights)
