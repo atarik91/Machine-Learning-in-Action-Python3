@@ -25,9 +25,9 @@ def sigmoid(inp):
     return 1.0 / (1 + exp(-inp))
 
 
-    '''
-        批量梯度下降
-    '''
+'''
+批量梯度下降
+'''
 def Grad_descent(datamat, labels):
 
     data = mat(datamat)
