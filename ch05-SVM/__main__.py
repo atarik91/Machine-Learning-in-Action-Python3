@@ -15,6 +15,6 @@ from image_recog import *
 
 if __name__ == '__main__':
     data, label = loadDataSet('testSet.txt')
-    #b, alpha = smoP(data, label, 0.6, 0.001, 40)
-    testRbf()
-    testDigits()
+    b, alpha = smoP(data, label, 0.6, 0.001, 40)
+    # testRbf()
+    # testDigits()

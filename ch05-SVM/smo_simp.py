@@ -24,6 +24,7 @@ def smoSimple(dataMat,classLabels,C,toler,maxIter):
     alphas=mat(zeros((m,1)))
     #迭代次数为0
     iters=0
+    #当迭代次数小于最大迭代次数时（外循环）
     while(iters<maxIter):
         #改变的alpha对数
         alphaPairsChanged=0
@@ -36,6 +37,7 @@ def smoSimple(dataMat,classLabels,C,toler,maxIter):
             Ei=fXi-float(labelMat[i])
             #如果不满足KKT条件，即labelMat[i]*fXi<1(labelMat[i]*fXi-1<-toler)
             #and alpha<C 或者labelMat[i]*fXi>1(labelMat[i]*fXi-1>toler)and alpha>0
+            #即如果该向量可以被优化
             if(((labelMat[i]*Ei < -toler)and(alphas[i] < C)) or \
             ((labelMat[i]*Ei>toler) and (alphas[i]>0))):
                 #随机选择第二个变量alphaj
