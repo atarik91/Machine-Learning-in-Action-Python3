@@ -51,7 +51,7 @@ def smoSimple(dataMat,classLabels,C,toler,maxIter):
                 #记录alphai和alphaj的原始值，便于后续的比较
                 alphaIold=alphas[i].copy()
                 alphaJold=alphas[j].copy()
-                #如何两个alpha对应样本的标签不相同
+                #如果两个alpha对应样本的标签不相同
                 if(labelMat[i]!=labelMat[j]):
                     #求出相应的上下边界
                     L=max(0,alphas[j]-alphas[i])
@@ -65,9 +65,10 @@ def smoSimple(dataMat,classLabels,C,toler,maxIter):
                 eta=2.0*dataMatrix[i,:]*dataMatrix[j,:].T-\
                     dataMatrix[i,:]*dataMatrix[i,:].T-\
                     dataMatrix[j,:]*dataMatrix[j,:].T
-                #如果eta>=0,跳出本次循环
+                #如果eta>=0,跳出本次循环,如果 eta 为0,那么计算新的 alpha[j] 就比较麻烦了,这里不考虑
                 if eta>=0:print("eta>=0"); continue
                 alphas[j]-=labelMat[j]*(Ei-Ej)/eta
+                #限制alphas[j]的取值在l和h之间
                 alphas[j]=clipAlpha(alphas[j],H,L)
                 #------------------------------------------    
                 #如果改变后的alphaj值变化不大，跳出本次循环    
@@ -85,7 +86,7 @@ def smoSimple(dataMat,classLabels,C,toler,maxIter):
                     dataMatrix[j,:]*dataMatrix[j,:].T
                 #如果0<alphai<C,那么b=b1
                 if(0<alphas[i]) and (C>alphas[i]):b=b1
-                #否则如果0<alphai<C,那么b=b1
+                #否则如果0<alphaj<C,那么b=b2
                 elif (0<alphas[j]) and (C>alphas[j]):b=b2
                 #否则，alphai，alphaj=0或C
                 else:b=(b1+b2)/2.0
